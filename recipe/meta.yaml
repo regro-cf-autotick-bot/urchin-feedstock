@@ -1,17 +1,17 @@
 {% set name = "urchin" %}
-{% set version = "0.0.27" %}
+{% set version = "0.0.29" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/urchin-{{ version }}.tar.gz
+  url: https://github.com/fishbotics/urchin/archive/refs/tags/v{{ version }}.zip
   sha256: bda308ed7d2b80eb1e097dc3963fabe9e00a6cbd89a1f6be6f063c2a065d3671
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install --no-deps --no-build-isolation . -vv
   number: 0
 
 requirements:
