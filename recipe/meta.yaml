@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/fishbotics/urchin/archive/refs/tags/v{{ version }}.zip
-  sha256: bda308ed7d2b80eb1e097dc3963fabe9e00a6cbd89a1f6be6f063c2a065d3671
+  sha256: cca32a41634ca951c89e296d0dee309f058187e5d1a6c867fa36a33fe2aa21ed
 
 build:
   noarch: python
@@ -27,6 +27,7 @@ requirements:
     - six
     - trimesh
     - pip
+    - setuptools
   run:
     - python >=3.6
     - lxml
@@ -46,6 +47,7 @@ test:
     - pip check
   requires:
     - pip
+    - libgl  # [linux]
 
 about:
   home: https://github.com/fishbotics/urchin
