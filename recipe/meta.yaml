@@ -12,11 +12,11 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install --no-deps --no-build-isolation . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - lxml
     - networkx
     - numpy
@@ -29,7 +29,7 @@ requirements:
     - pip
     - setuptools
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - lxml
     - networkx
     - numpy
@@ -48,6 +48,7 @@ test:
   requires:
     - pip
     - libgl  # [linux]
+    - python {{ python_min }}
 
 about:
   home: https://github.com/fishbotics/urchin
